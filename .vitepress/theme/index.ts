@@ -2,7 +2,9 @@
 import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
+import 'virtual:uno.css'
 import './style.css'
+import Page from './components/Page.vue'
 
 export default {
   extends: DefaultTheme,
@@ -13,5 +15,6 @@ export default {
   },
   enhanceApp({ app, router, siteData }) {
     // ...
-  }
+    app.component('Page', Page)
+  },
 } satisfies Theme
