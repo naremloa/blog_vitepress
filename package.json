@@ -1,5 +1,6 @@
 {
   "name": "vitepress-blog",
+  "type": "module",
   "version": "1.0.0",
   "description": "",
   "author": "",
@@ -11,6 +12,10 @@
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.13",
+    "radash": "^12.1.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.27.0",

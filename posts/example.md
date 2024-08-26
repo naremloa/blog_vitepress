@@ -1,8 +1,11 @@
 ---
 title: 一个巧妙的数据结构设计的例子，bitmap的使用
 description: 一个并不常见，但是非常考察基础知识的综合应用
+editedAt: 2024-08-20T10:00:00+08:00
+category: 系統設計
+tags: 設計,bitmap
 ---
-# Markdown Extension Examples
+# Markdown Extension Examplesadfasdf
 
 This page demonstrates some of the built-in markdown extensions provided by VitePress.
 

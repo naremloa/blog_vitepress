@@ -21,13 +21,8 @@
 #   - title: Feature C
 #     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 
+layout: doc
 aside: false
 ---
 
-<script setup>
-import { useData } from "vitepress";
-const { theme } = useData()
-</script>
-
-<pre>{{ JSON.stringify(theme.postsConfig.posts, undefined, 2) }}</pre>
-<Page v-bind="theme.postsConfig.posts[0]"></Page>
+<Posts></Posts>

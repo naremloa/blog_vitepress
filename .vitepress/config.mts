@@ -17,7 +17,7 @@ export default defineConfig({
   title: 'blog',
   description: 'blog',
   srcDir: '.',
-  srcExclude: ['README.md'],
+  srcExclude: ['README.md', 'translate'],
   rewrites: {
     'pages/:page': ':page',
   },
@@ -30,10 +30,9 @@ export default defineConfig({
   themeConfig: {
     postsConfig: createPostsConfig(),
     // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' },
-    ],
+    // nav: [
+    //   { text: 'Home', link: '/' },
+    // ],
 
     // sidebar: [
     //   {
