@@ -1,6 +1,7 @@
-import { defineConfig } from 'vitepress'
+import type { PostsConfig } from './postsConfig'
 import UnoCSS from 'unocss/vite'
-import { type PostsConfig, createPostsConfig } from './postsConfig.mts'
+import { defineConfig } from 'vitepress'
+import { createPostsConfig } from './postsConfig'
 
 /* eslint-disable ts/no-namespace,ts/consistent-type-definitions */
 declare module 'vitepress' {

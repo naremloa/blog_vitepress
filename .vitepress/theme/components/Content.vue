@@ -1,7 +1,7 @@
 <script lang="ts">
 import type { SlotsType, VNode } from 'vue'
-import { computed, defineComponent, h } from 'vue'
 import { isArray } from 'radash'
+import { computed, defineComponent, h } from 'vue'
 
 function extractNodeMap(nodes: VNode[], symbolAcc: symbol) {
   const displayMap = new Map<string | symbol, VNode[]>()

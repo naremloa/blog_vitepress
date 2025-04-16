@@ -1,4 +1,4 @@
-import { relative, resolve } from 'node:path'
+import { extname, relative, resolve } from 'node:path'
 import { cwd } from 'node:process'
 import { z } from 'zod'
 import { fdir as Fdir } from 'fdir'
@@ -31,12 +31,12 @@ export const postsConfigSchema = z.object({
 export type PostsConfig = z.infer<typeof postsConfigSchema>
 
 function getPosts() {
-  const root = cwd()
-  const workDir = resolve(root, 'posts')
+  const workDir = resolve('posts')
   const paths = new Fdir().glob('*.md').crawl(workDir).sync()
   return paths.map((path) => {
     const output = matter(fs.readFileSync(resolve(workDir, path)))
-    return postSchema.parse({ ...output.data, url: relative(root, resolve(workDir, path)).replace(/\..*$/, '') })
+    const postRelativePath = relative(resolve(), resolve(workDir, path))
+    return postSchema.parse({ ...output.data, url: postRelativePath.replace(extname(postRelativePath), '') })
   })
 }
 
