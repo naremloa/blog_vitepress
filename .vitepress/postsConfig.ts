@@ -1,9 +1,8 @@
 import { extname, relative, resolve } from 'node:path'
-import { cwd } from 'node:process'
-import { z } from 'zod'
 import { fdir as Fdir } from 'fdir'
-import matter from 'gray-matter'
 import fs from 'fs-extra'
+import matter from 'gray-matter'
+import { z } from 'zod'
 
 const postSchema = z.object({
   title: z.string(),
@@ -36,6 +35,7 @@ function getPosts() {
   return paths.map((path) => {
     const output = matter(fs.readFileSync(resolve(workDir, path)))
     const postRelativePath = relative(resolve(), resolve(workDir, path))
+    console.log('output', output)
     return postSchema.parse({ ...output.data, url: postRelativePath.replace(extname(postRelativePath), '') })
   })
 }

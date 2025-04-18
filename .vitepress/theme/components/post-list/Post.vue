@@ -8,7 +8,7 @@ const props = defineProps<{
   description?: string
   editedAt?: number | null
   tags: string[]
-  category: string
+  category?: string
 }>()
 
 const editedAt = computed(
@@ -26,21 +26,21 @@ const tags = computed(() => props.tags.map(tag => tag.trim()).filter(v => v))
       <a class="text-5" :href="props.url">{{ props.title }}</a>
       <span
         v-if="props.category"
-        class="text-4 leading-4.5 rounded-md bg-gray-700 p-x-2 p-y-1"
+        class="text-4 leading-4.5 rounded-md bg-gray-200 dark:bg-gray-700 p-x-2 p-y-1"
       >
         {{ props.category }}
       </span>
     </div>
-    <p v-if="props.description" class="text-gray-4 text-3.5">
+    <p v-if="props.description" class="text-gray-6 dark:text-gray-4 text-3.5">
       {{ props.description }}
     </p>
     <div class="flex flex-wrap gap-4 items-center">
-      <span>{{ editedAt }}</span>
+      <span v-if="editedAt">{{ editedAt }}</span>
       <div>
         <span
           v-for="(tag, idx) in tags"
           :key="idx"
-          class="text-3.5 m-x-1 p-x-2 p-y-1 rounded-md bg-gray-800"
+          class="text-3.5 first:m-l-0 m-x-1  p-x-2 p-y-1 rounded-md bg-gray-100 dark:bg-gray-800"
         >
           {{ tag }}
         </span>

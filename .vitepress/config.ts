@@ -16,38 +16,31 @@ declare module 'vitepress' {
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'blog',
-  description: 'blog',
+  description: 'personal blog',
   srcDir: '.',
   srcExclude: ['README.md', 'translate'],
-  rewrites: {
-    'pages/:page': ':page',
-  },
+  rewrites: { 'pages/:page': ':page' },
   cleanUrls: true,
-  vite: {
-    plugins: [
-      UnoCSS(),
-    ],
-  },
+  vite: { plugins: [UnoCSS()] },
+  lastUpdated: true,
   themeConfig: {
+    siteTitle: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m15 6l-6 6l6 6"/></svg>',
     postsConfig: createPostsConfig(),
-    // https://vitepress.dev/reference/default-theme-config
-    // nav: [
-    //   { text: 'Home', link: '/' },
-    // ],
-
-    // sidebar: [
-    //   {
-    //     text: 'Examples',
-    //     items: [
-    //       { text: 'Markdown Examples', link: '/markdown-examples' },
-    //       { text: 'Runtime API Examples', link: '/api-examples' }
-    //     ]
-    //   }
-    // ],
-
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
+      { icon: 'github', link: 'https://github.com/naremloa' },
     ],
-
+    nav: [
+      { text: 'About', link: '/pages/about', activeMatch: '/about' },
+    ],
+    lastUpdated: {
+      formatOptions: {
+        dateStyle: 'medium',
+        timeStyle: 'long',
+        hourCycle: 'h24',
+      },
+    },
+    footer: {
+      copyright: 'Copyright © 2024-PRESENT | <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>',
+    },
   },
 })
