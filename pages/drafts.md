@@ -3,8 +3,8 @@ layout: doc
 lastUpdated: false
 ---
 
-<PostList type='posts'>
+<PostList type='drafts'>
   <template #empty>
-    <pre>...🚧 🚧 🚧</pre>
+    <p>How could this happen???</p>
   </template>
 </PostList>

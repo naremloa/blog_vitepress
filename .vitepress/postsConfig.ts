@@ -23,24 +23,25 @@ const postSchema = z.object({
   ),
 })
 
+export type PostData = z.infer<typeof postSchema>
+
 export const postsConfigSchema = z.object({
   posts: z.array(postSchema),
 })
 
 export type PostsConfig = z.infer<typeof postsConfigSchema>
 
-function getPosts() {
-  const workDir = resolve('posts')
+function getPosts(path: string) {
+  const workDir = resolve(path)
   const paths = new Fdir().glob('*.md').crawl(workDir).sync()
   return paths.map((path) => {
     const output = matter(fs.readFileSync(resolve(workDir, path)))
     const postRelativePath = relative(resolve(), resolve(workDir, path))
-    console.log('output', output)
     return postSchema.parse({ ...output.data, url: postRelativePath.replace(extname(postRelativePath), '') })
   })
 }
 
-export function createPostsConfig(): PostsConfig {
-  const posts = getPosts()
+export function createPostsConfig(path: string): PostsConfig {
+  const posts = getPosts(path)
   return { posts }
 }
