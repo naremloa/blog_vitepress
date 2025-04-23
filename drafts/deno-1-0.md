@@ -3,10 +3,12 @@ title: Deno 1.0
 description: 【譯文】Deno 1.0正式發布
 category: Deno
 tags: Deno, JavaScript
+layout: doc
 datetime: 2025-04-17T11:17:00Z+08:00
 ---
 
 > 原文: [Deno 1.0](https://deno.land/v1) @written by Ryan Dahl, Bert Belder, and Bartek Iwańczuk
+>
 > 譯者: naremloa
 
 {{$frontmatter.datetime}}

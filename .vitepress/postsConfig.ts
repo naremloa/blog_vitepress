@@ -33,12 +33,15 @@ export type PostsConfig = z.infer<typeof postsConfigSchema>
 
 function getPosts(path: string) {
   const workDir = resolve(path)
-  const paths = new Fdir().glob('*.md').crawl(workDir).sync()
+  const paths = new Fdir().withRelativePaths().glob('**/*.md').crawl(workDir).sync()
   return paths.map((path) => {
     const output = matter(fs.readFileSync(resolve(workDir, path)))
     const postRelativePath = relative(resolve(), resolve(workDir, path))
-    return postSchema.parse({ ...output.data, url: postRelativePath.replace(extname(postRelativePath), '') })
-  })
+    const result = postSchema.safeParse({ ...output.data, url: postRelativePath.replace(extname(postRelativePath), '') })
+    if (result.success)
+      return result.data
+    return null
+  }).filter(v => v !== null)
 }
 
 export function createPostsConfig(path: string): PostsConfig {
