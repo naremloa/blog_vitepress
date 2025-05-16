@@ -2,7 +2,7 @@
   "name": "vitepress-blog",
   "type": "module",
   "version": "1.0.0",
-  "packageManager": "pnpm@10.8.0+sha512.0e82714d1b5b43c74610193cb20734897c1d00de89d0e18420aebc5977fa13d780a9cb05734624e81ebd81cc876cd464794850641c48b9544326b5622ca29971",
+  "packageManager": "pnpm@10.11.0",
   "description": "",
   "author": "",
   "license": "ISC",
@@ -19,19 +19,19 @@
     "radash": "^12.1.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.12.0",
+    "@antfu/eslint-config": "^4.13.1",
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^22.14.1",
-    "eslint": "^9.24.0",
-    "fdir": "^6.4.3",
+    "@types/node": "^22.15.18",
+    "eslint": "^9.26.0",
+    "fdir": "^6.4.4",
     "fs-extra": "^11.3.0",
     "gray-matter": "^4.0.3",
     "picomatch": "^4.0.2",
     "typescript": "^5.8.3",
-    "unocss": "^66.0.0",
+    "unocss": "^66.1.2",
     "vitepress": "^1.6.3",
-    "vue": "^3.5.13",
-    "zod": "^3.24.2"
+    "vue": "^3.5.14",
+    "zod": "^3.24.4"
   },
   "pnpm": {
     "peerDependencyRules": {
