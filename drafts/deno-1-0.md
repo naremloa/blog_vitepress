@@ -4,14 +4,11 @@ description: 【譯文】Deno 1.0正式發布
 category: Deno
 tags: Deno, JavaScript
 layout: doc
-datetime: 2025-04-17T11:17:00Z+08:00
 ---
 
 > 原文: [Deno 1.0](https://deno.land/v1) @written by Ryan Dahl, Bert Belder, and Bartek Iwańczuk
 >
 > 譯者: naremloa
-
-{{$frontmatter.datetime}}
 
 動態語言是一種很有用的工具。腳本能使用戶迅速且簡潔的將複雜的系統黏合在一起，並且能在不需要考慮包括像記憶體管理、系統建置等技術細節的環境下充分的展現創意。近幾年，像Rust、Go等的程式語言讓用戶能更容易的生產出複雜的原生機器語言，這些專案也在計算機基礎設施(`computer infrastructure`)的發展上有著很重大的作用。然而我們認為，能有一個可以解決多種範圍的問題領域(`problem domains`)的強大的腳本環境，還是很重要的。
 
