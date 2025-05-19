@@ -2,9 +2,13 @@
 layout: doc
 lastUpdated: false
 ---
+<script setup lang="ts">
+import { useData } from 'vitepress'
+const { theme } = useData()
+</script>
 
-<PostList type='posts'>
+<PostsList :list="theme.postsConfig?.posts">
   <template #empty>
     <pre>...🚧 🚧 🚧</pre>
   </template>
-</PostList>
+</PostsList>

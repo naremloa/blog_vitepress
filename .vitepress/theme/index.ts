@@ -1,12 +1,12 @@
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-import PostList from './components/post-list'
+import PostsList from './components/posts-list'
 import './style.css'
 import 'virtual:uno.css'
 
 export default {
   extends: DefaultTheme,
   enhanceApp({ app }) {
-    app.component('PostList', PostList)
+    app.component('PostsList', PostsList)
   },
 } satisfies Theme
