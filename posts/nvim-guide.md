@@ -1,11 +1,12 @@
 ---
 title: Nvim Guide
-description: Neovim 導覽
+description: A simple guide to using Neovim.
 editedAt: 2025-10-02T00:10:25+08:00
 category: Vim
 tags:
 datetime: 2025-10-02T00:10:25+08:00
 ---
+# Neovim Guide
 
 ## Operator
 | operator | key
